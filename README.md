@@ -21,7 +21,7 @@ The `collectChangesCommand` is a Sublime Text 3 plugin that allows users to coll
 1. For collecting all the changes, `ctrl+shift+.`.
 2. For adding arbitrary regions (current selection), `ctrl+shift+,`.
 3. Rightclick any line on the quick panel to show that part of the file at the center of the view. Or, Up-arrow (`up`) / Down-arrow (`down`) on the quick panel for the same purpose.
-4. Click (Leftclick) any line to Exit or Exclude. "Exit" will automatically select all the regions of the collection whereas "Exclude" will remove the region from the collection.
+4. Click (Leftclick) any line on the quick panel to Exit or Exclude. "Exit" will automatically select all the regions of the collection whereas "Exclude" will remove the region from the collection.
 5. To cancel operation after the quick panel has shown, Esc (`escape`) (or click elsewhere (outside the quick panel)).
 6. To select all the regions of the collection without showing the quick panel, copy this `select myCollection` text string (into the clipboard) before `ctrl+shift+,`.
 7. To delete all the regions of the collection at once (without showing the quick panel), copy this `delete myCollection` text string (into the clipboard) before `ctrl+shift+,`.
@@ -31,3 +31,5 @@ Feel free to submit issues, fork the repository, and send pull requests. Contrib
 
 ## License
 The "default" License.
+
+# If you appreciate my work, i will be very grateful if you can support my work by making small sum donation thru PayPal with `Send payment to` entered as `headwindtrend@gmail.com`. Thank you very much for your support.
