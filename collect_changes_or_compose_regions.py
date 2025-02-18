@@ -1,5 +1,6 @@
 import sublime
 import sublime_plugin
+import re
 
 # # # # # Add these 2 lines to your key bindings
 #	{ "keys": ["ctrl+shift+."], "command": "collect_changes" },
