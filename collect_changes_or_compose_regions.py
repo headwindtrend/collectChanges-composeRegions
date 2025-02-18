@@ -8,8 +8,8 @@ import re
 # # # # #
 
 class collectChangesCommand(sublime_plugin.TextCommand):
-	my_collection_list = []
-	my_quickpanel_list = []
+    my_collection_list = []
+    my_quickpanel_list = []
 
     def run(self, edit, addArbitraryRegions=False):
         # Function to include the current selection into 'myCollection'
@@ -24,7 +24,7 @@ class collectChangesCommand(sublime_plugin.TextCommand):
                 self.my_collection_list += current_selection_list
                 self.view.erase_regions('myCollection')
                 self.view.add_regions('myCollection', self.my_collection_list)
-				self.my_collection_list = self.view.get_regions('myCollection')
+                self.my_collection_list = self.view.get_regions('myCollection')
             return done_flag
 
         # Function to exhaust all modifications and add them to 'myCollection'
@@ -56,18 +56,18 @@ class collectChangesCommand(sublime_plugin.TextCommand):
                 sublime.set_clipboard('done << delete myCollection')
                 self.view.window().status_message('The regions "myCollection" is deleted.')
                 return
-			elif re.search(r"[\r\n]?\s*loadfrom\s*=\s*.+(?:[\r\n]|$)", clpbrd):
-				match = re.search(r"[\r\n]?\s*loadfrom\s*=\s*(.+)(?:[\r\n]|$)", clpbrd)
-				self.view.sel().clear(); self.view.sel().add_all(self.view.get_regions(match.group(1)))
-				sublime.set_clipboard('loaded << ' + match.group(1))
-				self.view.window().status_message('The regions "' + match.group(1) + '" is loaded.')
-			elif re.search(r"[\r\n]?\s*saveto\s*=\s*.+(?:[\r\n]|$)", clpbrd):
-				match = re.search(r"[\r\n]?\s*saveto\s*=\s*(.+)(?:[\r\n]|$)", clpbrd)
-				self.view.erase_regions(match.group(1))
-				self.view.add_regions(match.group(1), self.my_collection_list)
-				sublime.set_clipboard('saved << ' + match.group(1))
-				self.view.window().status_message('The collection of regions is saved as "' + match.group(1) + '".')
-				return
+            elif re.search(r"[\r\n]?\s*loadfrom\s*=\s*.+(?:[\r\n]|$)", clpbrd):
+                match = re.search(r"[\r\n]?\s*loadfrom\s*=\s*(.+)(?:[\r\n]|$)", clpbrd)
+                self.view.sel().clear(); self.view.sel().add_all(self.view.get_regions(match.group(1)))
+                sublime.set_clipboard('loaded << ' + match.group(1))
+                self.view.window().status_message('The regions "' + match.group(1) + '" is loaded.')
+            elif re.search(r"[\r\n]?\s*saveto\s*=\s*.+(?:[\r\n]|$)", clpbrd):
+                match = re.search(r"[\r\n]?\s*saveto\s*=\s*(.+)(?:[\r\n]|$)", clpbrd)
+                self.view.erase_regions(match.group(1))
+                self.view.add_regions(match.group(1), self.my_collection_list)
+                sublime.set_clipboard('saved << ' + match.group(1))
+                self.view.window().status_message('The collection of regions is saved as "' + match.group(1) + '".')
+                return
 
             include_current_selection()
         else:
