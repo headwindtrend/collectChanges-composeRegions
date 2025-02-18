@@ -9,6 +9,7 @@ The `collectChangesCommand` is a Sublime Text 3 plugin that allows users to coll
 - Include current selections and arbitrary regions into the collection.
 - Easily exclude specific regions from the collection.
 - Select or delete all collected modifications with clipboard commands.
+- load from any named regions, or save to any named regions. (named regions = any names (`keys`) used in `view.add_regions()` for defining regions.)
 
 ## Installation
 1. Copy the `collectChangesCommand` code into a new file named `collect_changes_or_compose_regions.py` in your Sublime Text `Packages/User` directory.
@@ -25,6 +26,8 @@ The `collectChangesCommand` is a Sublime Text 3 plugin that allows users to coll
 5. To cancel operation after the quick panel has shown, Esc (`escape`) (or click elsewhere (outside the quick panel)).
 6. To select all the regions of the collection without showing the quick panel, copy this `select myCollection` text string (into the clipboard) before `ctrl+shift+,`.
 7. To delete all the regions of the collection at once (without showing the quick panel), copy this `delete myCollection` text string (into the clipboard) before `ctrl+shift+,`.
+8. To load from a named regions, copy this `loadfrom = example` (where `example` is the name of the regions to be loaded) text string (into the clipboard) before `ctrl+shift+,`.
+9. To save to a named regions without showing the quick panel, copy this `saveto = example` (where `example` is the name of the regions to be saved) text string (into the clipboard) before `ctrl+shift+,`.
 
 ## Contributing
 Feel free to submit issues, fork the repository, and send pull requests. Contributions are welcome!
